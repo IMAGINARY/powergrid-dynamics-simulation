@@ -1,0 +1,37 @@
+{
+  "name": "powergrid-dynamics-simulation",
+  "version": "0.1.0",
+  "description": "Adaption of the Powergrid Dynamics Simulation application for IMAGINARY exhibitions",
+  "repository": "IMAGINARY/powergrid-dynamics-simulation",
+  "main": "index.html",
+  "author": "IMAGINARY gGmbH <info@imaginary.org>",
+  "license": "GPLv3",
+  "private": true,
+  "engines": {
+    "node": "^4.8.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "superagent": "^3.5.2",
+    "js-yaml": "^3.8.4"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.10.0",
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.0",
+    "gulp-pug": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.7",
+    "pug": "^2.0.0-beta6",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

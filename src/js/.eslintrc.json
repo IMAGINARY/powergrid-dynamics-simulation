@@ -1,0 +1,28 @@
+{
+  "extends": ["airbnb"],
+  "installedESLint": true,
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
+  "globals": {
+    "d3": true,
+    "updateMap": true,
+    "clearGeodesic": true,
+    "clearLoxodrome": true,
+    "clearEllipses": true,
+    "undoCommand": true,
+    "projection": true,
+    "rotateToCurrentLocation": true,
+    "sampleEllipses": true
+  },
+  "rules": {
+  }
+}

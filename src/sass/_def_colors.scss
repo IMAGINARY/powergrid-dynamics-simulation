@@ -1,0 +1,11 @@
+$color-white-real: #fff;
+$color-black-real: #000;
+
+$color-white: $color-white-real;
+$color-black: $color-black-real;
+
+
+@mixin neg {
+  color: $color-white;
+  -webkit-font-smoothing: antialiased !important;
+}
