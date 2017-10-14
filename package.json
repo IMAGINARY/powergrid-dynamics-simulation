@@ -1,7 +1,7 @@
 {
   "name": "powergrid-dynamics-simulation",
   "version": "0.1.0",
-  "description": "Adaption of the Powergrid Dynamics Simulation application for IMAGINARY exhibitions",
+  "description": "Adaption of the Power Grid Dynamics Simulation application for IMAGINARY exhibitions",
   "repository": "IMAGINARY/powergrid-dynamics-simulation",
   "main": "index.html",
   "author": "IMAGINARY gGmbH <info@imaginary.org>",

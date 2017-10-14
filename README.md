@@ -1,2 +1,2 @@
 # powergrid-dynamics-simulation
-"Powegrid Dynamics Simulation" MPE Application
+"Power Grid Dynamics Simulation" MPE Application
