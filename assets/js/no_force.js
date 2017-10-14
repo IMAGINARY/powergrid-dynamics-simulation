@@ -1,5 +1,5 @@
 // initialize parallel job
-var simWorker = new Worker('simulation.js');
+var simWorker = new Worker('assets/js/simulation.js');
 
 // ###############################################################################################################
 // setup svg container and background
@@ -22,7 +22,7 @@ ratio = 622/879;
 
 height = this.innerHeight*0.95;
 
-var imgUrl = "northern_grid/northern_landmass.svg";
+var imgUrl = "data/northern_grid/northern_landmass.svg";
 
 // network container
 d3.select("#centrepiece").selectAll("p").remove()
@@ -265,7 +265,7 @@ var speed_val = 0,
 var pert = {x: 0.1, y: 0.1};
 
 // load the network and perform simulation
-d3.json("northern_grid/northern.json", function(e, d) {simulate_graph(d)})
+d3.json("data/northern_grid/northern.json", function(e, d) {simulate_graph(d)})
 
 // ###############################################################################################################
 
