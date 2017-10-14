@@ -20,7 +20,7 @@ function bundleApp(isProduction) {
   // Browserify will bundle all our js files together in to one and will let
   // us use modules in the front end.
   var appBundler = browserify({
-    entries: './src/js/main.js',
+    entries: './src/es6/main.js',
     debug: !isProduction
   });
 
@@ -47,7 +47,12 @@ gulp.task('scripts:prod', function (){
 });
 
 gulp.task('scripts:watch', function () {
-  gulp.watch(['./src/js/*.js'], ['scripts:dev']);
+  gulp.watch(['./src/es6/*.js'], ['scripts:dev']);
+});
+
+gulp.task('copyjs', function () {
+  gulp.src('./src/js/*.js')
+    .pipe(gulp.dest(public_dir + '/assets/js/'));
 });
 
 gulp.task('reload', function(){
@@ -87,4 +92,4 @@ gulp.task('pug', function() {
       gulp.dest(public_dir));
 });
 
-gulp.task('default', ['pug', 'sass', 'scripts:prod']);
+gulp.task('default', ['pug', 'sass', 'scripts:prod', 'copyjs']);
