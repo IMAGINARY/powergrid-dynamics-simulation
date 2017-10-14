@@ -20,7 +20,7 @@ var formatCount = d3.format(",.0f");
 
 ratio = 622/879; 
 
-height = this.innerHeight*0.95;
+height = this.innerHeight*0.75;
 
 var imgUrl = "data/northern_grid/northern_landmass.svg";
 

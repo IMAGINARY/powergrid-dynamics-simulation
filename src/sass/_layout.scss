@@ -1,0 +1,19 @@
+$header-height: 10vh;
+$main-height: 80vh;
+$footer-height: 10vh;
+
+.header {
+  height: $header-height;
+}
+
+.main {
+  height: $main-height;
+}
+
+.footer {
+  height: $footer-height;
+}
+
+.fullheight {
+  height: $main-height;
+}
