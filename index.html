@@ -23,5 +23,54 @@
     </title>
   </head>
   <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 col-md-push-4">
+          <div id="centrepiece"></div>
+        </div>
+        <div class="col-md-3 col-md-push-4">
+          <div class="inputs">
+            <p><a class="btn btn-default" onclick="toggleColor()">Toggle color scheme</a></p>
+            <p><a class="btn btn-default" onclick="toggleFisheye()">Magnification</a></p>
+            <p><a class="btn btn-primary" onclick="resetNetwork()">Reset network</a>&nbsp;<a class="btn btn-primary" onclick="randomState()">Random state</a></p>
+            <p><a class="btn btn-primary" onclick="startSim()">Start simulation</a>&nbsp;<a class="btn btn-primary" onclick="stopSim()">Stop simulation</a></p>
+            <div class="form-horizontal">
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <label class="control-label" for="speed_val">Co-rotation speed [Hz]</label>
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control" id="speed_val" type="number" min="0" max="50" step="10" value="50">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <label class="control-label" for="damp_val">Damping coefficient</label>
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control" id="damp_val" type="number" min="0" max="5" step="0.1" value="1">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <label class="control-label" for="xpert_val">Phase pert. [&pi;]</label>
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control" id="xpert_val" type="number" min="-1" max="1" step="0.1" value="0.1">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <label class="control-label" for="ypert_val">Frequency pert. [Hz]</label>
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-control" id="ypert_val" type="number" min="-15" step="0.1" value="1">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
