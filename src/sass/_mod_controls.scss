@@ -1,0 +1,91 @@
+.inputs {
+  label {
+    display: block;
+    clear: both;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  .slider {
+    display: block;
+  }
+}
+
+.controls-perturbation {
+  width: 100%;
+  margin-top: 0;
+  position: absolute;
+  top: 10vh;
+}
+
+.controls-sim {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2vh;
+  width: 100%;
+
+  .button {
+    margin-right: 3vh;
+  }
+}
+
+.controls-util {
+  position: absolute;
+  bottom: 0;
+  right: 1vh;
+  margin-bottom: 2vh;
+  width: 100%;
+  text-align: right;
+
+  .button {
+    margin-left: 3vh;
+  }
+}
+
+.button {
+  display: inline-block;
+  width: 5vh;
+  height: 5vh;
+  padding: 0;
+  margin: 1vh;
+  position: relative;
+
+  &:after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-family: FontAwesome;
+    font-size: 5vh;
+    line-height: 5vh;
+    color: $color-gray;
+  }
+
+  &:active {
+    &:after {
+      color: darken($color-gray, 10%);
+    }
+  }
+}
+
+.sim-off {
+  .controls-sim .button-on-off:after {
+    content: ""; // fa-play
+  }
+}
+
+.sim-on {
+  .controls-sim .button-on-off:after {
+    content: ""; // fa-pause
+  }
+}
+
+.controls-sim .button-reset:after {
+  content: ""; // fa-reset
+}
+
+.controls-util .button-info:after {
+  content: ""; // fa-info-circle
+}

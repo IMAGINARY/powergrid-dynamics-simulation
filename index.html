@@ -9,10 +9,13 @@
     <meta property="og:title" content="Power Grid Dynamics Simulation">
     <link rel="icon" type="image/ico" href="assets/img/favicon.png">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" media="all" type="text/css">
+    <link rel="stylesheet" href="vendor/bootstrap-slider/css/bootstrap-slider.min.css" media="all" type="text/css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css" media="all" type="text/css">
     <link rel="stylesheet" href="assets/css/default.css?v=0" media="screen" type="text/css">
     <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
     <!-- jQuery and web libraries BEGIN-->
     <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap-slider/bootstrap-slider.min.js"></script>
     <script type="text/javascript" src="vendor/d3/d3.min.js"></script>
     <script type="text/javascript" src="vendor/routie/routie.min.js"></script>
     <script type="text/javascript" src="assets/js/no_force.js" defer></script>
@@ -29,53 +32,48 @@
     <div class="main">
       <div class="container-fluid fullheight">
         <div class="row">
-          <div class="col-md-4">&nbsp;</div>
-          <div class="col-md-5 fullheight">
-            <div class="fullheight" id="centrepiece"></div>
-          </div>
-          <div class="col-md-3">
-            <div class="inputs">
-              <p><a class="btn btn-primary" onclick="resetNetwork()">Reset network</a>&nbsp;<a class="btn btn-primary" onclick="randomState()">Random state</a></p>
-              <p><a class="btn btn-primary" onclick="startSim()">Start simulation</a>&nbsp;<a class="btn btn-primary" onclick="stopSim()">Stop simulation</a></p>
-              <div class="form-horizontal">
-                <div class="form-group">
-                  <div class="col-sm-8">
-                    <label class="control-label" for="speed_val">Co-rotation speed [Hz]</label>
-                  </div>
-                  <div class="col-sm-4">
-                    <input class="form-control" id="speed_val" type="number" min="0" max="50" step="10" value="50">
+          <div class="col-md-3 col-left fullheight">
+            <div class="controls-perturbation">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="slider-container">
+                    <input class="form-control slider" id="xpert_val" type="text" data-slider-id="xpert_val" data-slider-min="-1" data-slider-max="1" data-slider-step="0.1" data-slider-value="0.1" value="0.1">
+                    <label class="control-label" for="xpert_val">Phase pert.</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-sm-8">
+                <div class="col-sm-6">
+                  <div class="slider-container">
+                    <input class="form-control slider" id="ypert_val" type="text" data-slider-id="ypert_val" data-slider-min="-15" data-slider-max="15" data-slider-step="0.1" data-slider-value="1" value="1">
+                    <label class="control-label" for="ypert_val">Frequency pert.</label>
+                  </div>
+                </div>
+              </div><a class="btn btn-primary" onclick="randomState()">Apply perturbations to all nodes</a>
+            </div>
+            <div class="controls-sim">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="slider-container">
+                    <input class="slider" id="speed_val" type="text" data-slider-id="speed_val" data-slider-min="0" data-slider-max="50" data-slider-step="10" data-slider-value="50" value="50">
+                    <label class="control-label" for="speed_val">Co-rotation speed</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="slider-container">
+                    <input class="slider" id="damp_val" type="text" data-slider-id="damp_val" data-slider-min="0" data-slider-max="5" data-slider-step="0.1" data-slider-value="1" value="1">
                     <label class="control-label" for="damp_val">Damping coefficient</label>
                   </div>
-                  <div class="col-sm-4">
-                    <input class="form-control" id="damp_val" type="number" min="0" max="5" step="0.1" value="1">
-                  </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-sm-8">
-                    <label class="control-label" for="xpert_val">Phase pert. [&pi;]</label>
-                  </div>
-                  <div class="col-sm-4">
-                    <input class="form-control" id="xpert_val" type="number" min="-1" max="1" step="0.1" value="0.1">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-8">
-                    <label class="control-label" for="ypert_val">Frequency pert. [Hz]</label>
-                  </div>
-                  <div class="col-sm-4">
-                    <input class="form-control" id="ypert_val" type="number" min="-15" step="0.1" value="1">
-                  </div>
-                </div>
-              </div>
+              </div><a class="button button-on-off" href="#" data-control="play-pause"></a><a class="button button-reset" href="#" data-control="reset"></a>
             </div>
+          </div>
+          <div class="col-md-6 col-map fullheight">
+            <div class="fullheight" id="centrepiece"></div>
+          </div>
+          <div class="col-md-3 col-right fullheight">
+            <div class="controls-util"><a class="button button-info" href="#" data-control="info"></a></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer"></div>
   </body>
 </html>

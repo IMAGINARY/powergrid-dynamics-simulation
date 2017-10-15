@@ -1,6 +1,6 @@
 $header-height: 10vh;
-$main-height: 80vh;
-$footer-height: 10vh;
+$main-height: 90vh;
+$footer-height: 0vh;
 
 .header {
   height: $header-height;
@@ -8,6 +8,7 @@ $footer-height: 10vh;
 
 .main {
   height: $main-height;
+  padding: 0 1vh;
 }
 
 .footer {
@@ -16,4 +17,5 @@ $footer-height: 10vh;
 
 .fullheight {
   height: $main-height;
+  position: relative;
 }

@@ -9,39 +9,32 @@ block main
   .main
     .container-fluid.fullheight
       .row
-        .col-md-4
-          | &nbsp;
-        .col-md-5.fullheight
-          #centrepiece.fullheight
-        .col-md-3
-          .inputs
-            p
-              a.btn.btn-primary(onclick="resetNetwork()") Reset network
-              | &nbsp;
-              a.btn.btn-primary(onclick="randomState()") Random state
-            p
-              a.btn.btn-primary(onclick="startSim()") Start simulation
-              | &nbsp;
-              a.btn.btn-primary(onclick="stopSim()") Stop simulation
-            .form-horizontal
-              .form-group
-                .col-sm-8
-                  label.control-label(for="speed_val") Co-rotation speed [Hz]
-                .col-sm-4
-                  input.form-control#speed_val(type="number", min="0", max="50", step="10", value="50")
-              .form-group
-                .col-sm-8
+        .col-md-3.col-left.fullheight
+          .controls-perturbation
+            .row
+              .col-sm-6
+                .slider-container
+                  input.form-control#xpert_val(type="text", class="slider", data-slider-id='xpert_val', data-slider-min="-1", data-slider-max="1", data-slider-step="0.1", data-slider-value="0.1", value="0.1")
+                  label.control-label(for="xpert_val") Phase pert.
+              .col-sm-6
+                .slider-container
+                  input.form-control#ypert_val(type="text", class="slider", data-slider-id='ypert_val', data-slider-min="-15", data-slider-max="15", data-slider-step="0.1", data-slider-value="1", value="1")
+                  label.control-label(for="ypert_val") Frequency pert.
+            a.btn.btn-primary(onclick="randomState()") Apply perturbations to all nodes
+          .controls-sim
+            .row
+              .col-sm-6
+                .slider-container
+                  input.slider#speed_val(type="text", data-slider-id='speed_val', data-slider-min="0", data-slider-max="50", data-slider-step="10", data-slider-value="50", value="50")
+                  label.control-label(for="speed_val") Co-rotation speed
+              .col-sm-6
+                .slider-container
+                  input.slider#damp_val(type="text", data-slider-id='damp_val', data-slider-min="0", data-slider-max="5", data-slider-step="0.1", data-slider-value="1", value="1")
                   label.control-label(for="damp_val") Damping coefficient
-                .col-sm-4
-                  input.form-control#damp_val(type="number", min="0", max="5", step="0.1", value="1")
-              .form-group
-                .col-sm-8
-                  label.control-label(for="xpert_val") Phase pert. [&pi;]
-                .col-sm-4
-                  input.form-control#xpert_val(type="number", min="-1", max="1", step="0.1", value="0.1")
-              .form-group
-                .col-sm-8
-                  label.control-label(for="ypert_val") Frequency pert. [Hz]
-                .col-sm-4
-                  input.form-control#ypert_val(type="number", min="-15", step="0.1", value="1")
-  .footer
+            a.button.button-on-off(href='#', data-control='play-pause')
+            a.button.button-reset(href='#', data-control='reset')
+        .col-md-6.col-map.fullheight
+          #centrepiece.fullheight
+        .col-md-3.col-right.fullheight
+          .controls-util
+            a.button.button-info(href='#', data-control='info')

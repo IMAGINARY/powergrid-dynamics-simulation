@@ -4,6 +4,8 @@ $color-black-real: #000;
 $color-white: $color-white-real;
 $color-black: $color-black-real;
 
+$color-gray: #a0a0a0;
+$color-blue: #00749e;
 
 @mixin neg {
   color: $color-white;
