@@ -88,6 +88,11 @@ $(() => {
     ev.preventDefault();
   });
 
+  $('[data-control=random]').on('click', (ev) => {
+    Simulation.randomState();
+    ev.preventDefault();
+  });
+
   sliderPertX.slider('setValue', 0.1, true, true);
   sliderPertY.slider('setValue', 1, true, true);
   updateSimControls();

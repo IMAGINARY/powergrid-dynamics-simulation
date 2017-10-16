@@ -1,4 +1,4 @@
-/* global simWorker, startSim, stopSim, resetNetwork, speed_val, damp_val, pert */
+/* global simWorker, startSim, stopSim, resetNetwork, speed_val, damp_val, pert, randomState */
 
 /**
  * Interface for encapsulating global/dirty calls to the original simulation code
@@ -61,6 +61,10 @@ export default class Simulation {
     };
     // send data
     simWorker.postMessage(data);
+  }
+
+  static randomState() {
+    randomState();
   }
 }
 

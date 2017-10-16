@@ -4,7 +4,7 @@
   position: absolute;
   top: 14vh;
   background-color: $color-blue-light;
-  padding: 2vh 1.5vh 1vh 2vh;
+  padding: 2vh 2vh 1vh 2vh;
 
   &:before {
     display: block;
@@ -20,8 +20,33 @@
     margin-top: -5vh;
   }
 
+  .btn {
+    border: none;
+    border-radius: 0;
+    background-color: $color-blue;
+    color: $color-white;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-blue;
+    }
+
+    &:active {
+      background-color: darken($color-blue, 10%);
+      color: $color-white;
+    }
+  }
+
   h2 {
     margin: 0 0 0.3em 0;
+  }
+
+  a[data-control=random] {
+    .fa {
+      font-size: 1.3em;
+      margin-right: 0.8vh;
+    }
   }
 }
 

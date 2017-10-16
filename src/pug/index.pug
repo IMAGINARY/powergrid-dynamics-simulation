@@ -26,7 +26,10 @@ block main
               | perturb its phase φ and frequency ω
               | by these values.
             p
-              a.btn.btn-default(onclick="randomState()") Apply perturbance to all nodes
+              a.btn(href='#', data-control="random")
+                i.fa.fa-bolt
+                |
+                | Apply perturbance to all nodes
           .controls-sim
             .row
               .col-sm-6
