@@ -302,7 +302,8 @@ function simulate_graph(graph_loaded){
                 .attr("r", 20)
                 .style("fill", "black")
                 .style("stroke", "#686c70")
-                .style("stroke-width", "1px");
+                .style("stroke-width", "1px")
+                .style("cursor", "pointer");
 
   var node = nodeGroup.selectAll("circle")
                     .data(graph.nodes)
