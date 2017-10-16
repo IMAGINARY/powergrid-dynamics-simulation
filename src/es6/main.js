@@ -13,7 +13,7 @@ $(() => {
     tooltip: 'always',
   });
 
-  const slidePertX = $('.slider#xpert_val').slider({
+  const sliderPertX = $('.slider#xpert_val').slider({
     formatter: (value) => {
       if (value === 1) {
         return 'π';
@@ -26,19 +26,25 @@ $(() => {
     },
     tooltip: 'always',
   });
-  const slidePertY = $('.slider#ypert_val').slider({
+  const sliderPertY = $('.slider#ypert_val').slider({
     formatter: value => `${value} Hz`,
     tooltip: 'always',
   });
 
   sliderSpeed.slider('on', 'change', (data) => {
-    console.trace(data);
     Simulation.setParamSpeed(data.newValue);
   });
 
   sliderDamp.slider('on', 'change', (data) => {
-    console.trace(data);
     Simulation.setParamDamp(data.newValue);
+  });
+
+  sliderPertX.slider('on', 'change', (data) => {
+    Simulation.setParamPertX(data.newValue);
+  });
+
+  sliderPertY.slider('on', 'change', (data) => {
+    Simulation.setParamPertY(data.newValue);
   });
 
   /**
@@ -61,6 +67,12 @@ $(() => {
     }
   }
 
+  function reset() {
+    Simulation.reset();
+    sliderPertX.slider('setValue', 0.1, true, true);
+    sliderPertY.slider('setValue', 1, true, true);
+  }
+
   $('[data-control=play-pause]').on('click', (ev) => {
     if (Simulation.isRunning()) {
       Simulation.stop();
@@ -72,10 +84,12 @@ $(() => {
   });
 
   $('[data-control=reset]').on('click', (ev) => {
-    Simulation.reset();
+    reset();
     ev.preventDefault();
   });
 
+  sliderPertX.slider('setValue', 0.1, true, true);
+  sliderPertY.slider('setValue', 1, true, true);
   updateSimControls();
 
   /**
