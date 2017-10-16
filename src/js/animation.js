@@ -262,7 +262,7 @@ var y;
 var speed_val = 0,
 	damp_val = 10;
 
-var pert = {x: 0.1, y: 1};
+var pert = {x: 0.1 * Math.PI, y: 1};
 
 // load the network and perform simulation
 d3.json("data/northern_grid/northern.json", function(e, d) {simulate_graph(d)})
