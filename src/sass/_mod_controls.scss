@@ -99,7 +99,7 @@
   height: 5vh;
   line-height: 5vh;
   @include xsmallHeading;
-  color: $color-gray;
+  color: $color-blue;
   padding: 0 0 0 6vh;
   margin: 1vh;
   position: relative;
@@ -114,17 +114,17 @@
     font-family: FontAwesome;
     font-size: 5vh;
     line-height: 5vh;
-    color: $color-gray;
+    color: $color-blue;
   }
 
   &:active {
     &:after {
-      color: darken($color-gray, 10%);
+      color: darken($color-blue, 10%);
     }
   }
 
   &:hover {
-    color: $color-gray;
+    color: $color-blue;
     text-decoration: none;
   }
 }

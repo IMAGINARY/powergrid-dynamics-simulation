@@ -235,7 +235,7 @@ h3 {
   font-family: 'Source Sans Pro', Arial, sans-serif;
   font-weight: 600;
   font-size: 2.3vh;
-  color: #a0a0a0;
+  color: #00749e;
   padding: 0 0 0 6vh;
   margin: 1vh;
   position: relative; }
@@ -249,11 +249,11 @@ h3 {
     font-family: FontAwesome;
     font-size: 5vh;
     line-height: 5vh;
-    color: #a0a0a0; }
+    color: #00749e; }
   .button:active:after {
-    color: #878787; }
+    color: #004f6b; }
   .button:hover {
-    color: #a0a0a0;
+    color: #00749e;
     text-decoration: none; }
 
 .sim-off .controls-sim .button-on-off:after {
