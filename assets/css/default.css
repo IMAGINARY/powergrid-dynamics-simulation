@@ -132,6 +132,18 @@ h3 {
     font-weight: 600; }
   .slider-container .slider.slider-horizontal {
     width: 100%; }
+  .slider-container .slider .tooltip-inner {
+    background-color: #00749e; }
+  .slider-container .slider .tooltip-arrow {
+    border-top-color: #00749e; }
+  .slider-container .slider .slider-handle {
+    background-image: linear-gradient(to bottom, #00749e 0, #006185 100%); }
+  .slider-container .slider.slider-disabled .tooltip-inner {
+    background-color: #a0a0a0; }
+  .slider-container .slider.slider-disabled .tooltip-arrow {
+    border-top-color: #a0a0a0; }
+  .slider-container .slider.slider-disabled .slider-handle {
+    background-image: linear-gradient(to bottom, #e8e8e8 0, #e8e8e8 100%); }
 
 .header h1 {
   font-size: 7vh;
@@ -171,6 +183,21 @@ h3 {
   width: 100%; }
   .controls-sim .button {
     margin-right: 5vh; }
+  .controls-sim .slider-container {
+    margin-bottom: 4vh; }
+  .controls-sim .sim-param-hint {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.8vh;
+    line-height: 2vh;
+    position: absolute;
+    bottom: 9vh;
+    color: #a0a0a0;
+    transition: opacity 0.5s;
+    opacity: 0; }
+
+.sim-on .sim-param-hint {
+  opacity: 1; }
 
 .controls-util {
   position: absolute;
@@ -226,8 +253,8 @@ h3 {
 
 .button-overlay-close {
   position: absolute;
-  right: 1vh;
-  bottom: 3vh; }
+  right: 0.25vh;
+  bottom: 2.25vh; }
   .button-overlay-close:after {
     content: ""; }
 
@@ -257,6 +284,9 @@ h3 {
   .overlay:before {
     opacity: 0;
     transition: opacity 0.5s; }
+  .overlay .overlay-close {
+    opacity: 0;
+    transition: opacity 0.25s 0s; }
 
 .overlay.overlay-visible {
   transition: top 0s 0s;
@@ -267,6 +297,9 @@ h3 {
   .overlay.overlay-visible:before {
     opacity: 1;
     transition: opacity 0.5s; }
+  .overlay.overlay-visible .overlay-close {
+    opacity: 1;
+    transition: opacity 0.5s 0.5s; }
 
 #centrepiece svg {
   display: block;

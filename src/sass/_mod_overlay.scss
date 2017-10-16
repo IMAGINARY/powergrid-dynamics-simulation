@@ -20,6 +20,10 @@ $overlay-height: $main-height + 3vh;
     left: 0;
     background-color: $color-white;
   }
+
+  .button.overlay-close {
+
+  }
 }
 
 $overlay-open-delay: 1s;
@@ -36,6 +40,11 @@ $overlay-close-delay: 0.5s;
     opacity: 0;
     transition: opacity $overlay-open-delay / 2;
   }
+
+  .overlay-close {
+    opacity: 0;
+    transition: opacity $overlay-open-delay * 0.25  0s;
+  }
 }
 
 .overlay.overlay-visible {
@@ -48,5 +57,9 @@ $overlay-close-delay: 0.5s;
   &:before {
     opacity: 1;
     transition: opacity $overlay-open-delay * 0.5;
+  }
+  .overlay-close {
+    opacity: 1;
+    transition: opacity $overlay-open-delay * 0.5  $overlay-open-delay * 0.5;
   }
 }

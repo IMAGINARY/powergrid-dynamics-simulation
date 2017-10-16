@@ -10,4 +10,28 @@
   .slider.slider-horizontal {
     width: 100%;
   }
+
+  .slider {
+    .tooltip-inner {
+      background-color: $color-blue;
+    }
+    .tooltip-arrow {
+      border-top-color: $color-blue;
+    }
+    .slider-handle {
+      background-image: linear-gradient(to bottom, $color-blue 0, darken($color-blue, 5%) 100%);
+    }
+  }
+
+  .slider.slider-disabled {
+    .tooltip-inner {
+      background-color: $color-gray;
+    }
+    .tooltip-arrow {
+      border-top-color: $color-gray;
+    }
+    .slider-handle {
+      background-image: linear-gradient(to bottom, #e8e8e8 0, #e8e8e8 100%);
+    }
+  }
 }

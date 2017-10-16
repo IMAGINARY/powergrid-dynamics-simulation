@@ -34,6 +34,24 @@
   .button {
     margin-right: 5vh;
   }
+
+  .slider-container {
+    margin-bottom: 4vh;
+  }
+
+  .sim-param-hint {
+    @include smallText;
+    line-height: 2vh;
+    position: absolute;
+    bottom: 9vh;
+    color: $color-gray;
+    transition: opacity 0.5s;
+    opacity: 0;
+  }
+}
+
+.sim-on .sim-param-hint {
+  opacity: 1;
 }
 
 .controls-util {
@@ -108,8 +126,8 @@
 
 .button-overlay-close {
   position: absolute;
-  right: 1vh;
-  bottom: 3vh;
+  right: 0.25vh;
+  bottom: 2.25vh;
   &:after {
     content: ""; // fa-close
   }
