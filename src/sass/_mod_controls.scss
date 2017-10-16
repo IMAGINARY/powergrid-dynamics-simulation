@@ -32,7 +32,7 @@
   width: 100%;
 
   .button {
-    margin-right: 3vh;
+    margin-right: 5vh;
   }
 }
 
@@ -51,9 +51,13 @@
 
 .button {
   display: inline-block;
+  vertical-align: top;
   width: 5vh;
   height: 5vh;
-  padding: 0;
+  line-height: 5vh;
+  @include xsmallHeading;
+  color: $color-gray;
+  padding: 0 0 0 6vh;
   margin: 1vh;
   position: relative;
 
@@ -74,6 +78,11 @@
     &:after {
       color: darken($color-gray, 10%);
     }
+  }
+
+  &:hover {
+    color: $color-gray;
+    text-decoration: none;
   }
 }
 

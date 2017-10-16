@@ -11,7 +11,7 @@ block main
       .row
         .col-md-3.col-left.fullheight
           .controls-perturbation
-            h3 Simulate local disturbances
+            h2 Simulate local disturbances
             .row
               .col-sm-6
                 .slider-container
@@ -38,7 +38,7 @@ block main
                   input.slider#damp_val(type="text", data-slider-id='damp_val', data-slider-min="0", data-slider-max="5", data-slider-step="0.1", data-slider-value="1", value="1")
                   label.control-label(for="damp_val") Damping coefficient
             a.button.button-on-off(href='#', data-control='play-pause')
-            a.button.button-reset(href='#', data-control='reset')
+            a.button.button-reset(href='#', data-control='reset') Reset
         .col-md-6.col-map.fullheight
           #centrepiece.fullheight
         .col-md-3.col-right.fullheight

@@ -170,7 +170,7 @@ h3 {
   margin-bottom: 2vh;
   width: 100%; }
   .controls-sim .button {
-    margin-right: 3vh; }
+    margin-right: 5vh; }
 
 .controls-util {
   position: absolute;
@@ -184,9 +184,15 @@ h3 {
 
 .button {
   display: inline-block;
+  vertical-align: top;
   width: 5vh;
   height: 5vh;
-  padding: 0;
+  line-height: 5vh;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2.3vh;
+  color: #a0a0a0;
+  padding: 0 0 0 6vh;
   margin: 1vh;
   position: relative; }
   .button:after {
@@ -202,6 +208,9 @@ h3 {
     color: #a0a0a0; }
   .button:active:after {
     color: #878787; }
+  .button:hover {
+    color: #a0a0a0;
+    text-decoration: none; }
 
 .sim-off .controls-sim .button-on-off:after {
   content: ""; }
