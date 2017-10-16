@@ -6,9 +6,11 @@ $color-black: $color-black-real;
 
 $color-gray: #a0a0a0;
 $color-gray-light: #e8e8e8;
+$color-gray-dark: #666;
 
 $color-blue: #00749e;
 $color-blue-light: #dadfee;
+$color-orange: #f35c2a;
 
 @mixin neg {
   color: $color-white;

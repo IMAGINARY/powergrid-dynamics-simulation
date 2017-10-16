@@ -1,0 +1,8 @@
+.about-text {
+  transform: translateX(110%);
+  transition: transform 0.25s 0s;
+  &.visible {
+    transform: translateX(0%);
+    transition: transform 0.5s 0.25s;
+  }
+}

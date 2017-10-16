@@ -1,0 +1,16 @@
+h2 About the simulation
+p
+  | Here you see a representation of the Scandinavian high-voltage power transmission network. The links are
+  | existing transmission lines of capacity <strong>K</strong>. They change their width proportional to line loading.
+  | The nodes are sites of power producers or consumers, each of which generates or consumes one unit of power
+  | <strong>P</strong>. The state of each node is characterised by two variables, its phase φ (node colour) and
+  | frequency ω (node size). The normal operation corresponds to the <strong>synchronisation</strong> of all nodes to a
+  | common frequency of 50Hz with constant phase differences such that line loadings are constant.
+p
+  | The phase and frequency of the i-th node, evolve according to the following equation:
+  img.sim-equation(src='assets/img/sim-equation.png')
+p
+  | The parameter α corresponds to the <strong>damping</strong> at each node. You can use the slider to vary it
+  | between 0 and 1. For convenience, the simulation is using a <strong>co-rotating reference</strong> frame with a
+  | default speed of 50Hz. You can control the speed with the slider. By setting it to 50Hz, oscillations at the
+  | synchronous grid frequency appear static. A value of 0Hz then corresponds to a static frame.

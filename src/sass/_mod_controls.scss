@@ -89,6 +89,15 @@
 
   .button {
     margin-left: 3vh;
+    &:after {
+      color: $color-gray;
+    }
+
+    &:active {
+      &:after {
+        color: darken($color-gray, 10%);
+      }
+    }
   }
 }
 
@@ -155,5 +164,57 @@
   bottom: 2.25vh;
   &:after {
     content: ""; // fa-close
+    color: $color-orange;
+  }
+
+  &:active {
+    &:after {
+      color: darken($color-orange, 10%);
+    }
+  }
+}
+
+.controls-about {
+  position: absolute;
+  bottom: 2.5vh;
+  margin-left: -1.2vh;
+
+  .controls-about-label {
+    color: $color-gray-dark;
+    @include xsmallHeading;
+    display: block;
+    line-height: 7vh;
+    position: absolute;
+    left: -16vw;
+    text-align: right;
+    vertical-align: top;
+    width: 15vw;
+  }
+}
+
+.button-about {
+  display: inline-block;
+  width: 4.6vh;
+  height: 4.6vh;
+  padding: 0;
+  background-color: $color-gray;
+  border-radius: 50%;
+  color: $color-white;
+  line-height: 4.6vh;
+  @include headingFont;
+  font-size: 4.2vh;
+  text-align: center;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &:active {
+    background-color: darken($color-gray, 10%);
+  }
+
+  &.selected {
+    background-color: $color-orange;
   }
 }

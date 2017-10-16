@@ -98,6 +98,20 @@ $(() => {
   updateSimControls();
 
   /**
+   * "About"/Learn more buttons
+   */
+  $('.button-about').on('click', (ev) => {
+    if(!$(ev.target).hasClass('selected')) {
+      $('.button-about').removeClass('selected');
+      $(ev.target).addClass('selected');
+      $('.about-text').removeClass('visible');
+      const aboutID = $(ev.target).attr('data-about');
+      $(`.about-text#${aboutID}`).addClass('visible');
+    }
+    ev.preventDefault();
+  });
+
+  /**
    * Overlay
    */
   function showOverlay() {
@@ -107,6 +121,11 @@ $(() => {
   function hideOverlay() {
     $('.overlay-info').removeClass('overlay-visible');
   }
+
+  $('.overlay').on('click', (ev) => {
+    hideOverlay();
+    ev.preventDefault();
+  });
 
   $('.overlay-close').on('click', (ev) => {
     hideOverlay();

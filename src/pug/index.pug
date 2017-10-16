@@ -46,8 +46,19 @@ block main
         .col-md-6.col-map.fullheight
           #centrepiece.fullheight
         .col-md-3.col-right.fullheight
+          .about-area.about-text.visible#about-simulation
+            include include/about_simulation
+          .about-area.about-text#about-frequency-meter
+            include include/about_frequency_meter
+          .about-area.about-text#about-disturbances
+            include include/about_disturbances
           .controls-util
             a.button.button-info(href='#', data-control='info')
+          .controls-about
+            .controls-about-label Learn more
+            a.button.button-about.selected(href='#', data-about='about-simulation') 1
+            a.button.button-about(href='#', data-about='about-frequency-meter') 2
+            a.button.button-about(href='#', data-about='about-disturbances') 3
   .overlay.overlay-info
     .overlay-content
       include include/info

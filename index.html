@@ -79,7 +79,61 @@
             <div class="fullheight" id="centrepiece"></div>
           </div>
           <div class="col-md-3 col-right fullheight">
+            <div class="about-area about-text visible" id="about-simulation">
+              <h2>About the simulation</h2>
+              <p>
+                Here you see a representation of the Scandinavian high-voltage power transmission network. The links are
+                existing transmission lines of capacity <strong>K</strong>. They change their width proportional to line loading.
+                The nodes are sites of power producers or consumers, each of which generates or consumes one unit of power
+                <strong>P</strong>. The state of each node is characterised by two variables, its phase φ (node colour) and
+                frequency ω (node size). The normal operation corresponds to the <strong>synchronisation</strong> of all nodes to a
+                common frequency of 50Hz with constant phase differences such that line loadings are constant.
+              </p>
+              <p>The phase and frequency of the i-th node, evolve according to the following equation:<img class="sim-equation" src="assets/img/sim-equation.png"></p>
+              <p>
+                The parameter α corresponds to the <strong>damping</strong> at each node. You can use the slider to vary it
+                between 0 and 1. For convenience, the simulation is using a <strong>co-rotating reference</strong> frame with a
+                default speed of 50Hz. You can control the speed with the slider. By setting it to 50Hz, oscillations at the
+                synchronous grid frequency appear static. A value of 0Hz then corresponds to a static frame.
+              </p>
+            </div>
+            <div class="about-area about-text" id="about-frequency-meter">
+              <h2>The frequency meter</h2>
+              <p>
+                In an AC power grid, it is an essential objective to maintain a stable common grid frequency, typically 50Hz. It
+                corresponds to a perfectly balanced system where electricity production meets the demand on the consumer side.
+                According to European regulation, frequency deviations must not be larger than +/-0.2Hz, otherwise special action
+                is required.
+              </p>
+              <p>
+                Beneath the map you see an indicator for the average grid frequency -- a frequency meter. The needle points
+                upwards when the system operates at 50Hz. Negative and positive deviations correspond to under- respectively
+                overproduction. The red dots mark the lowest and highest local frequency deviations, the numerical values are
+                stated below the meter.
+              </p>
+            </div>
+            <div class="about-area about-text" id="about-disturbances">
+              <h2>Experiments with disturbances</h2>
+              <p>
+                You can study the effects of disturbances at single nodes on the power grid. By clicking on a node, its phase φ and
+                frequency ω are perturbed by the values selected through the sliders on the left of the screen.
+              </p>
+              <p>You can also apply the perturbance to all nodes with the button under the sliders.</p>
+              <p>
+                Observe how the nodes change their colour/ size and how the links change their width proportional to the
+                phase/frequency and line loadings. Using such experiments, the CoNDyNet researchers attempt to answer questions
+                like:
+              </p>
+              <ul>
+                <li>What is the probability to come back to a stable situation after a local perturbation?</li>
+                <li>What is the probability that all frequency deviations are strictly limited?</li>
+                <li>Can we use properties of the network structure to identify the most critical nodes in terms of the above questions?</li>
+              </ul>
+            </div>
             <div class="controls-util"><a class="button button-info" href="#" data-control="info"></a></div>
+            <div class="controls-about">
+              <div class="controls-about-label">Learn more</div><a class="button button-about selected" href="#" data-about="about-simulation">1</a><a class="button button-about" href="#" data-about="about-frequency-meter">2</a><a class="button button-about" href="#" data-about="about-disturbances">3</a>
+            </div>
           </div>
         </div>
       </div>
