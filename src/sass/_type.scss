@@ -5,5 +5,35 @@
 
 @mixin headingFont {
   font-family: 'Source Sans Pro', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+@mixin smallText {
+  @include regularFont;
+  font-size: 1.8vh;
+}
+
+@mixin regularText {
+  @include regularFont;
+  font-size: 2.3vh;
+}
+
+@mixin largeText {
+  @include regularFont;
+  font-size: 2.6vh;
+}
+
+@mixin xsmallHeading {
+  @include headingFont;
+  font-size: 2.3vh;
+}
+
+@mixin smallHeading {
+  @include headingFont;
+  font-size: 2.6vh;
+}
+
+@mixin largeHeading {
+  @include headingFont;
+  font-size: 3vh;
 }

@@ -1,8 +1,11 @@
+$overlay-top: $header-height - 3vh;
+$overlay-height: $main-height + 3vh;
+
 .overlay {
   position: absolute;
   width: 100%;
-  height: $main-height;
-  top: $header-height;
+  height: $overlay-height;
+  top: $overlay-top;
   left: 0;
   z-index: 2000;
 
@@ -37,7 +40,7 @@ $overlay-close-delay: 0.5s;
 
 .overlay.overlay-visible {
   transition: top 0s 0s;
-  top: 10vh;
+  top: $overlay-top;
   .overlay-content {
     opacity: 1;
     transition: opacity $overlay-open-delay * 0.75  $overlay-open-delay * 0.25;

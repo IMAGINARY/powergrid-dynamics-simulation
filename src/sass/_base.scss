@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @include headingFont;
+  @include regularText;
   color: $color-blue;
 }
 
@@ -21,15 +21,15 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8em;
+  @include largeHeading;
   margin-bottom: 0.9em;
 }
 
 h3 {
-  font-size: 1em;
+  @include xsmallHeading;
   margin: 0 0 0.1em 0;
 }
 
 .large {
-  font-size: 1.1em;
+  @include largeText;
 }

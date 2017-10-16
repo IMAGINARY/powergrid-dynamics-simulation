@@ -1,6 +1,6 @@
 #centrepiece svg {
   display: block;
-  margin: 2vh auto 0;
+  margin: -3vh auto 0;
   font-size: 14px; // since svg has rescaling px font sizes work more uniformly than %
 }
 
@@ -24,4 +24,27 @@
 
 .logo-bmbf {
   max-width: 50%;
+}
+
+.about-area {
+  @include smallText;
+  width: auto;
+  position: absolute;
+  bottom: 11vh;
+  padding-right: 15px;
+
+  h2 {
+    @include largeHeading;
+    margin: 0 0 0.3em 0;
+  }
+
+  ul {
+    padding-left: 1.5em;
+  }
+}
+
+.sim-equation {
+  width: 100%;
+  height: auto;
+  margin: 1vh 0;
 }
