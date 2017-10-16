@@ -50,11 +50,6 @@ gulp.task('scripts:watch', function () {
   gulp.watch(['./src/es6/*.js'], ['scripts:dev']);
 });
 
-gulp.task('copyjs', function () {
-  gulp.src('./src/js/*.js')
-    .pipe(gulp.dest(public_dir + '/assets/js/'));
-});
-
 gulp.task('reload', function(){
   browserSync.reload();
 });
@@ -92,4 +87,4 @@ gulp.task('pug', function() {
       gulp.dest(public_dir));
 });
 
-gulp.task('default', ['pug', 'sass', 'scripts:prod', 'copyjs']);
+gulp.task('default', ['pug', 'sass', 'scripts:prod']);
