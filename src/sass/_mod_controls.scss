@@ -21,6 +21,7 @@
   }
 
   .btn {
+    @include regularText;
     border: none;
     border-radius: 0;
     background-color: $color-blue;
@@ -202,7 +203,7 @@
   color: $color-white;
   line-height: 4.6vh;
   @include headingFont;
-  font-size: 4.2vh;
+  font-size: 3.8vh;
   text-align: center;
 
   &:hover, &:focus {
