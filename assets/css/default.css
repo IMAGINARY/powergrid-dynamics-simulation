@@ -256,7 +256,8 @@ h3 {
 
 #centrepiece svg {
   display: block;
-  margin: 2vh auto 0; }
+  margin: 2vh auto 0;
+  font-size: 14px; }
 
 .overlay-info ul {
   padding-left: 1.5em; }

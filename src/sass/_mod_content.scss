@@ -1,6 +1,7 @@
 #centrepiece svg {
   display: block;
   margin: 2vh auto 0;
+  font-size: 14px; // since svg has rescaling px font sizes work more uniformly than %
 }
 
 .overlay-info {
