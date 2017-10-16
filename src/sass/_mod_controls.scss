@@ -1,21 +1,24 @@
-.inputs {
-  label {
-    display: block;
-    clear: both;
-    font-weight: normal;
-    text-align: left;
-  }
-
-  .slider {
-    display: block;
-  }
-}
-
 .controls-perturbation {
   width: 100%;
   margin-top: 0;
   position: absolute;
-  top: 10vh;
+  top: 14vh;
+  background-color: $color-blue-light;
+  padding: 2vh;
+
+  &:before {
+    display: block;
+    content: " ";
+    background-color: $color-blue-light;
+    position: absolute;
+    right: -5vh;
+    transform: rotate(45deg);
+    width: 10vh;
+    top: 50%;
+    height: 10vh;
+    z-index: -1;
+    margin-top: -5vh;
+  }
 }
 
 .controls-sim {
@@ -93,7 +96,7 @@
 .button-overlay-close {
   position: absolute;
   right: 1vh;
-  bottom: 2vh;
+  bottom: 3vh;
   &:after {
     content: ""; // fa-close
   }

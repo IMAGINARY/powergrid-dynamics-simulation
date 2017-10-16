@@ -117,8 +117,8 @@ h3 {
   margin-top: 40px;
   margin-bottom: 16px; }
   .slider-container label {
-    font-weight: normal;
-    display: block; }
+    display: block;
+    color: #00749e; }
   .slider-container .slider.slider-horizontal {
     width: 100%; }
 
@@ -130,20 +130,25 @@ h3 {
   line-height: 8vh;
   box-sizing: content-box; }
 
-.inputs label {
-  display: block;
-  clear: both;
-  font-weight: normal;
-  text-align: left; }
-
-.inputs .slider {
-  display: block; }
-
 .controls-perturbation {
   width: 100%;
   margin-top: 0;
   position: absolute;
-  top: 10vh; }
+  top: 14vh;
+  background-color: #dadfee;
+  padding: 2vh; }
+  .controls-perturbation:before {
+    display: block;
+    content: " ";
+    background-color: #dadfee;
+    position: absolute;
+    right: -5vh;
+    transform: rotate(45deg);
+    width: 10vh;
+    top: 50%;
+    height: 10vh;
+    z-index: -1;
+    margin-top: -5vh; }
 
 .controls-sim {
   position: absolute;
@@ -199,7 +204,7 @@ h3 {
 .button-overlay-close {
   position: absolute;
   right: 1vh;
-  bottom: 2vh; }
+  bottom: 3vh; }
   .button-overlay-close:after {
     content: ""; }
 

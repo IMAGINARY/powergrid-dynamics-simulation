@@ -20,7 +20,13 @@ block main
                 .slider-container
                   input.form-control#ypert_val(type="text", class="slider", data-slider-id='ypert_val', data-slider-min="-15", data-slider-max="15", data-slider-step="0.1", data-slider-value="1", value="1")
                   label.control-label(for="ypert_val") Frequency pert.
-            a.btn.btn-primary(onclick="randomState()") Apply perturbations to all nodes
+            p
+              | Click on a node to perturb
+              | its phase φ and frequency ω
+              | by these values
+              | simulating a local disturbance.
+            p
+              a.btn.btn-default(onclick="randomState()") Apply perturbance to all nodes
           .controls-sim
             .row
               .col-sm-6

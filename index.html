@@ -25,7 +25,7 @@
     <title>Power Grid Dynamics Simulation
     </title>
   </head>
-  <body>
+  <body class="lock-position disable-select">
     <div class="header">
       <h1>Power Grid Dynamics Simulation</h1>
     </div>
@@ -47,7 +47,14 @@
                     <label class="control-label" for="ypert_val">Frequency pert.</label>
                   </div>
                 </div>
-              </div><a class="btn btn-primary" onclick="randomState()">Apply perturbations to all nodes</a>
+              </div>
+              <p>
+                Click on a node to perturb
+                its phase φ and frequency ω
+                by these values
+                simulating a local disturbance.
+              </p>
+              <p><a class="btn btn-default" onclick="randomState()">Apply perturbance to all nodes</a></p>
             </div>
             <div class="controls-sim">
               <div class="row">

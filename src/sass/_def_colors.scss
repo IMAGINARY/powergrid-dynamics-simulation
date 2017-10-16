@@ -5,7 +5,10 @@ $color-white: $color-white-real;
 $color-black: $color-black-real;
 
 $color-gray: #a0a0a0;
+$color-gray-light: #e8e8e8;
+
 $color-blue: #00749e;
+$color-blue-light: #dadfee;
 
 @mixin neg {
   color: $color-white;
