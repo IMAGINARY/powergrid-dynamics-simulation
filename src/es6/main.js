@@ -77,4 +77,25 @@ $(() => {
   });
 
   updateSimControls();
+
+  /**
+   * Overlay
+   */
+  function showOverlay() {
+    $('.overlay-info').addClass('overlay-visible');
+  }
+
+  function hideOverlay() {
+    $('.overlay-info').removeClass('overlay-visible');
+  }
+
+  $('.overlay-close').on('click', (ev) => {
+    hideOverlay();
+    ev.preventDefault();
+  });
+
+  $('[data-control=info]').on('click', (ev) => {
+    showOverlay();
+    ev.preventDefault();
+  });
 });

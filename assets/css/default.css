@@ -80,12 +80,24 @@ html, body {
 
 body {
   font-family: 'Source Sans Pro', Arial, sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  font-size: 2.3vh; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Sans Pro', Arial, sans-serif;
   font-weight: 400;
   color: #00749e; }
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.9em; }
+
+h3 {
+  font-size: 1em;
+  margin: 0 0 0.1em 0; }
+
+.large {
+  font-size: 1.1em; }
 
 .header {
   height: 10vh; }
@@ -184,8 +196,67 @@ h1, h2, h3, h4, h5, h6 {
 .controls-util .button-info:after {
   content: ""; }
 
+.button-overlay-close {
+  position: absolute;
+  right: 1vh;
+  bottom: 2vh; }
+  .button-overlay-close:after {
+    content: ""; }
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+  left: 0;
+  z-index: 2000; }
+  .overlay:before {
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff; }
+
+.overlay {
+  transition: top 0s 0.5s;
+  top: 100%; }
+  .overlay .overlay-content {
+    opacity: 0;
+    transition: opacity 0.5s; }
+  .overlay:before {
+    opacity: 0;
+    transition: opacity 0.5s; }
+
+.overlay.overlay-visible {
+  transition: top 0s 0s;
+  top: 10vh; }
+  .overlay.overlay-visible .overlay-content {
+    opacity: 1;
+    transition: opacity 0.75s 0.25s; }
+  .overlay.overlay-visible:before {
+    opacity: 1;
+    transition: opacity 0.5s; }
+
 #centrepiece svg {
   display: block;
   margin: 0 auto; }
+
+.overlay-info ul {
+  padding-left: 1.5em; }
+  .overlay-info ul li {
+    margin-bottom: 0.4em; }
+
+.logos {
+  margin-top: 3vh; }
+
+.logo-condynet {
+  max-width: 50%;
+  margin-left: -3.8%; }
+
+.logo-bmbf {
+  max-width: 50%; }
 
 /*# sourceMappingURL=default.css.map */

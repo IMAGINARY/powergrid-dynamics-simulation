@@ -89,3 +89,12 @@
 .controls-util .button-info:after {
   content: ""; // fa-info-circle
 }
+
+.button-overlay-close {
+  position: absolute;
+  right: 1vh;
+  bottom: 2vh;
+  &:after {
+    content: ""; // fa-close
+  }
+}

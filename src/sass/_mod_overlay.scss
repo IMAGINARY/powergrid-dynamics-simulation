@@ -1,0 +1,49 @@
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: $main-height;
+  top: $header-height;
+  left: 0;
+  z-index: 2000;
+
+  // Overlay back
+  &:before {
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-white;
+  }
+}
+
+$overlay-open-delay: 1s;
+$overlay-close-delay: 0.5s;
+
+.overlay {
+  transition: top 0s $overlay-close-delay;
+  top: 100%;
+  .overlay-content {
+    opacity: 0;
+    transition: opacity $overlay-close-delay;
+  }
+  &:before {
+    opacity: 0;
+    transition: opacity $overlay-open-delay / 2;
+  }
+}
+
+.overlay.overlay-visible {
+  transition: top 0s 0s;
+  top: 10vh;
+  .overlay-content {
+    opacity: 1;
+    transition: opacity $overlay-open-delay * 0.75  $overlay-open-delay * 0.25;
+  }
+  &:before {
+    opacity: 1;
+    transition: opacity $overlay-open-delay * 0.5;
+  }
+}
