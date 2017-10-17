@@ -1,9 +1,0 @@
-#
-# Allow selection of text (for copy/paste, etc.)
-# (default: true)
-#
-# This setting should be false for exhibits in kiosk mode but should be left true for
-# access via web, as an interactive book, etc. Copying and pasting text is important
-# for classroom use, journalism, looking up information in other sources, etc.
-#
-allowTextSelection: true
