@@ -134,6 +134,23 @@ h3 {
     width: 100%; }
   .slider-container .slider {
     cursor: pointer; }
+    .slider-container .slider.slider-horizontal {
+      height: 2.5vh; }
+    .slider-container .slider .slider-handle {
+      width: 2.5vh;
+      height: 2.5vh;
+      margin-left: -1.2vh; }
+    .slider-container .slider .slider-track {
+      height: 1.2vh;
+      margin-top: -0.6vh; }
+    .slider-container .slider .tooltip {
+      font-size: 1.8vh; }
+      .slider-container .slider .tooltip.top {
+        margin-top: -4.5vh;
+        padding: 0.75vh 0; }
+        .slider-container .slider .tooltip.top .tooltip-arrow {
+          margin-left: -1vh;
+          border-width: 1vh 1vh 0; }
     .slider-container .slider .tooltip-inner {
       background-color: #00749e; }
     .slider-container .slider .tooltip-arrow {
