@@ -79,12 +79,12 @@ html, body {
   overflow: hidden; }
 
 body {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 2.3vh; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 2.3vh;
   color: #00749e; }
@@ -93,19 +93,19 @@ h1 {
   font-weight: 600; }
 
 h2 {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 3vh;
   margin-bottom: 0.9em; }
 
 h3 {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 2.3vh;
   margin: 0 0 0.1em 0; }
 
 .large {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 2.6vh; }
 
@@ -193,7 +193,7 @@ h3 {
     z-index: -1;
     margin-top: -5vh; }
   .controls-perturbation .btn {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
     font-size: 2.3vh;
     border: none;
@@ -223,7 +223,7 @@ h3 {
   .controls-sim .slider-container {
     margin-bottom: 4vh; }
   .controls-sim .sim-param-hint {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
     font-size: 1.8vh;
     line-height: 2vh;
@@ -256,7 +256,7 @@ h3 {
   width: 5vh;
   height: 5vh;
   line-height: 5vh;
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 2.3vh;
   color: #00749e;
@@ -308,7 +308,7 @@ h3 {
   margin-left: -1.2vh; }
   .controls-about .controls-about-label {
     color: #666;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 2.3vh;
     display: block;
@@ -328,7 +328,7 @@ h3 {
   border-radius: 50%;
   color: #fff;
   line-height: 4.6vh;
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 3.8vh;
   text-align: center; }
@@ -411,7 +411,7 @@ h3 {
   max-width: 50%; }
 
 .about-area {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   font-size: 1.8vh;
   width: auto;
@@ -419,7 +419,7 @@ h3 {
   bottom: 11vh;
   padding-right: 15px; }
   .about-area h2 {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 3vh;
     margin: 0 0 0.3em 0; }
