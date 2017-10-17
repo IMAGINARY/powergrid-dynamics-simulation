@@ -188,7 +188,7 @@ h3 {
     right: -5vh;
     transform: rotate(45deg);
     width: 10vh;
-    top: 50%;
+    top: 62%;
     height: 10vh;
     z-index: -1;
     margin-top: -5vh; }
@@ -212,6 +212,11 @@ h3 {
   .controls-perturbation a[data-control=random] .fa {
     font-size: 1.3em;
     margin-right: 0.8vh; }
+  .controls-perturbation .hint {
+    margin-bottom: 3vh; }
+  .controls-perturbation .split {
+    border-top: 1px solid #fff;
+    padding-top: 2vh; }
 
 .controls-sim {
   position: absolute;

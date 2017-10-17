@@ -14,7 +14,7 @@
     right: -5vh;
     transform: rotate(45deg);
     width: 10vh;
-    top: 50%;
+    top: 62%;
     height: 10vh;
     z-index: -1;
     margin-top: -5vh;
@@ -48,6 +48,15 @@
       font-size: 1.3em;
       margin-right: 0.8vh;
     }
+  }
+
+  .hint {
+    margin-bottom: 3vh;
+  }
+
+  .split {
+    border-top: 1px solid #fff;
+    padding-top: 2vh;
   }
 }
 

@@ -21,11 +21,11 @@ block main
                 .slider-container
                   input.form-control#ypert_val(type="text", class="slider", data-slider-id='ypert_val', data-slider-min="-15", data-slider-max="15", data-slider-step="0.1", data-slider-value="1", value="1")
                   label.control-label(for="ypert_val") Frequency pert.
-            p
+            p.hint
               | Click on a node on the map to
               | perturb its phase φ and frequency ω
               | by these values.
-            p
+            p.split
               a.btn(href='#', data-control="random")
                 i.fa.fa-bolt
                 |
