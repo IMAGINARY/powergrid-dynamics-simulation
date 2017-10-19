@@ -262,7 +262,7 @@ var y;
 var circleid = null;
 
 // parameters
-var base_frequency = 0.;
+var base_frequency = 8.;
 var	damp_modifier = 1.;
 
 var pert = {x: 0.1 * Math.PI, y: 1};
