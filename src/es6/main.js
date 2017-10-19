@@ -136,4 +136,9 @@ $(() => {
     showOverlay();
     ev.preventDefault();
   });
+
+  /**
+   * Disable dragging of buttons
+   */
+  $('.btn, .button').on('dragstart', () => false);
 });
