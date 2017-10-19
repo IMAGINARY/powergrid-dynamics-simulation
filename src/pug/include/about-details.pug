@@ -1,0 +1,15 @@
+h2 Some advanced details
+
+p
+| The nodes are actually net power producers or consumers, representing the power balance of the surrounding area. The
+| dynamics are determined by rotating turbines in the power plants generating an AC voltage. Mathematically, they are
+| treated as so-called oscillators.
+p
+| We use the analogy of clocks for oscillators. Strictly speaking, this would be a
+| clock with only one needle. Its position corresponds to the phase, while the speed is its frequency (revoluations per
+| second, Hz). Phases are defined modulo 2π, i.e. the position is identified after each revolution just like on a real
+| clock.
+p
+| We simulate the self-organised synchronisation of the nodes. In reality, this is assisted by many controllors
+| which also keep frequency deviation within strict limits. Large frequency deviations inevitably lead to black-outs.
+| Hence, the very chaotic states in our simulation would correspond to a black-out in reality.

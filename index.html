@@ -39,21 +39,17 @@
                 <div class="col-sm-6">
                   <div class="slider-container">
                     <input class="form-control slider" id="xpert_val" type="text" data-slider-id="xpert_val" data-slider-min="-1" data-slider-max="1" data-slider-step="0.1" data-slider-value="0.1" value="0.1">
-                    <label class="control-label" for="xpert_val">Phase pert.</label>
+                    <label class="control-label" for="xpert_val">Perturb position</label>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="slider-container">
                     <input class="form-control slider" id="ypert_val" type="text" data-slider-id="ypert_val" data-slider-min="-15" data-slider-max="15" data-slider-step="0.1" data-slider-value="0.1" value="0.1">
-                    <label class="control-label" for="ypert_val">Frequency pert.</label>
+                    <label class="control-label" for="ypert_val">Perturb speed</label>
                   </div>
                 </div>
               </div>
-              <p class="hint">
-                Click on a node on the map to
-                perturb its phase ϕ and frequency ω
-                by these values.
-              </p>
+              <p class="hint">Click on a node on the map to perturb its position and speed by these values.</p>
               <p class="split"><a class="btn" href="#" data-control="random"><i class="fa fa-bolt"></i>
                   Apply perturbance to all nodes</a></p>
             </div>
@@ -62,13 +58,13 @@
                 <div class="col-sm-6">
                   <div class="slider-container">
                     <input class="slider" id="speed_val" type="text" data-slider-id="speed_val" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="42" value="42">
-                    <label class="control-label" for="speed_val">Co-rotation speed</label>
+                    <label class="control-label" for="speed_val">Base speed</label>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="slider-container">
                     <input class="slider" id="damp_val" type="text" data-slider-id="damp_val" data-slider-min="0" data-slider-max="30" data-slider-step="0.1" data-slider-value="1" value="1">
-                    <label class="control-label" for="damp_val">Damping coefficient</label>
+                    <label class="control-label" for="damp_val">Friction modifier</label>
                   </div>
                 </div>
               </div><a class="button button-on-off" href="#" data-control="play-pause"></a><a class="button button-reset" href="#" data-control="reset">Reset</a>
@@ -79,45 +75,24 @@
           </div>
           <div class="col-md-3 col-right fullheight">
             <div class="about-area about-text visible" id="about-simulation">
-              <h2>About the simulation</h2>
-              <p>
-                Here you see a representation of the Scandinavian high-voltage power transmission network. The links are
-                existing transmission lines of capacity <strong>K</strong>. They change their width proportional to line loading.
-                The nodes are sites of power producers or consumers, each of which generates or consumes one unit of power
-                <strong>P</strong>. The state of each node is characterised by two variables, its phase ϕ (node colour) and
-                frequency ω (node size). The normal operation corresponds to the <strong>synchronisation</strong> of all nodes to a
-                common frequency of 50Hz with constant phase differences such that line loadings are constant.
-              </p>
-              <p>The phase and frequency of the i-th node, evolve according to the following equation:<img class="sim-equation" src="assets/img/sim-equation.png"></p>
-              <p>
-                The parameter α corresponds to the <strong>damping</strong> at each node. You can use the slider to vary it
-                between 0 and 1. For convenience, the simulation is using a <strong>co-rotating reference</strong> frame with a
-                default speed of 50Hz. You can control the speed with the slider. By setting it to 50Hz, oscillations at the
-                synchronous grid frequency appear static. A value of 0Hz then corresponds to a static frame.
-              </p>
+              <h2>What do I see?</h2>
+              <p>This is a simulation of the Scandinavian high-voltage power transmission network. The links are transmission lines, they change their width proportional to their usage. The nodes are sites of power producers or consumers.</p>
+              <p>The nodes produce or consume AC power and behave as so-called oscillators.</p>
+              <p>Think of them as fast-running clocks which exchange their current time via the links. In stable operation of the power grid, all clocks are required to run at the same global speed, i.e. no clock is overturning another one. Speed deviations are visualised in the changing size of the nodes.</p>
+              <p>When the clock speed is the same at all nodes, the time differences between them are constant. Each of the nodes is its own time zone, with some being in advance and some being behind of the others. After each clock cycle, the positions are identified. Nodes that are behind draw power from advanced nodes. This determines the direction of power transmission.</p>
             </div>
             <div class="about-area about-text" id="about-frequency-meter">
-              <h2>The frequency meter</h2>
-              <p>
-                In an AC power grid, it is an essential objective to maintain a stable common grid frequency, typically 50Hz. It
-                corresponds to a perfectly balanced system where electricity production meets the demand on the consumer side.
-                According to European regulation, frequency deviations must not be larger than +/-0.2Hz, otherwise special action
-                is required.
-              </p>
-              <p>
-                Beneath the map you see an indicator for the average grid frequency -- a frequency meter. The needle points
-                upwards when the system operates at 50Hz. Negative and positive deviations correspond to under- respectively
-                overproduction. The red dots mark the lowest and highest local frequency deviations, the numerical values are
-                stated below the meter.
-              </p>
+              <h2>Synchronization</h2>
+              <p>The normal operation at the global clock speed with constant time differences is called synchronisation. In Europe, the nodes are synchronised at a global speed of 50Hz, i.e. clock cycles per minute. The larger the “time difference” between two nodes, the more power is being transmitted between them.</p>
+              <p>At a base speed of 50hz the clocks appear to stand still. By reducing the <b>base speed</b>, you reduce the slow-motion effect until you observe the real-time simulation.</p>
+              <p>Each clock is subject to a certain amount of <b>friction</b> when it deviates from the global speed. By increasing the friction multiplier, the power grid becomes more stable.</p>
             </div>
             <div class="about-area about-text" id="about-disturbances">
               <h2>Experiments with disturbances</h2>
               <p>
-                You can study the effects of disturbances at single nodes on the power grid. By clicking on a node, its phase ϕ and
-                frequency ω are perturbed by the values selected through the sliders on the left of the screen.
+                You can manually perturb the clock position and speed of any node by clicking on it. The size of the perturbation
+                can be selected with the sliders on the left.
               </p>
-              <p>You can also apply the perturbance to all nodes with the button under the sliders.</p>
               <p>
                 Observe how the nodes change their colour/ size and how the links change their width proportional to the
                 phase/frequency and line loadings. Using such experiments, the CoNDyNet researchers attempt to answer questions
@@ -129,9 +104,22 @@
                 <li>Can we use properties of the network structure to identify the most critical nodes in terms of the above questions?</li>
               </ul>
             </div>
+            <div class="about-area about-text" id="about-details">
+              <h2>Some advanced details</h2>
+              <p></p>The nodes are actually net power producers or consumers, representing the power balance of the surrounding area. The
+              dynamics are determined by rotating turbines in the power plants generating an AC voltage. Mathematically, they are
+              treated as so-called oscillators.
+              <p></p>We use the analogy of clocks for oscillators. Strictly speaking, this would be a
+              clock with only one needle. Its position corresponds to the phase, while the speed is its frequency (revoluations per
+              second, Hz). Phases are defined modulo 2π, i.e. the position is identified after each revolution just like on a real
+              clock.
+              <p></p>We simulate the self-organised synchronisation of the nodes. In reality, this is assisted by many controllors
+              which also keep frequency deviation within strict limits. Large frequency deviations inevitably lead to black-outs.
+              Hence, the very chaotic states in our simulation would correspond to a black-out in reality.
+            </div>
             <div class="controls-util"><a class="button button-info" href="#" data-control="info"></a></div>
             <div class="controls-about">
-              <div class="controls-about-label">Learn more</div><a class="button button-about selected" href="#" data-about="about-simulation">1</a><a class="button button-about" href="#" data-about="about-frequency-meter">2</a><a class="button button-about" href="#" data-about="about-disturbances">3</a>
+              <div class="controls-about-label">Learn more</div><a class="button button-about selected" href="#" data-about="about-simulation">1</a><a class="button button-about" href="#" data-about="about-frequency-meter">2</a><a class="button button-about" href="#" data-about="about-disturbances">3</a><a class="button button-about" href="#" data-about="about-details">4</a>
             </div>
           </div>
         </div>

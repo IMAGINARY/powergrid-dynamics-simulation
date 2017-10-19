@@ -16,15 +16,13 @@ block main
               .col-sm-6
                 .slider-container
                   input.form-control#xpert_val(type="text", class="slider", data-slider-id='xpert_val', data-slider-min="-1", data-slider-max="1", data-slider-step="0.1", data-slider-value="0.1", value="0.1")
-                  label.control-label(for="xpert_val") Phase pert.
+                  label.control-label(for="xpert_val") Perturb position
               .col-sm-6
                 .slider-container
                   input.form-control#ypert_val(type="text", class="slider", data-slider-id='ypert_val', data-slider-min="-15", data-slider-max="15", data-slider-step="0.1", data-slider-value="0.1", value="0.1")
-                  label.control-label(for="ypert_val") Frequency pert.
+                  label.control-label(for="ypert_val") Perturb speed
             p.hint
-              | Click on a node on the map to
-              | perturb its phase ϕ and frequency ω
-              | by these values.
+              | Click on a node on the map to perturb its position and speed by these values.
             p.split
               a.btn(href='#', data-control="random")
                 i.fa.fa-bolt
@@ -35,22 +33,24 @@ block main
               .col-sm-6
                 .slider-container
                   input.slider#speed_val(type="text", data-slider-id='speed_val', data-slider-min="0", data-slider-max="50", data-slider-step="1", data-slider-value="42", value="42")
-                  label.control-label(for="speed_val") Co-rotation speed
+                  label.control-label(for="speed_val") Base speed
               .col-sm-6
                 .slider-container
                   input.slider#damp_val(type="text", data-slider-id='damp_val', data-slider-min="0", data-slider-max="30", data-slider-step="0.1", data-slider-value="1", value="1")
-                  label.control-label(for="damp_val") Damping coefficient
+                  label.control-label(for="damp_val") Friction modifier
             a.button.button-on-off(href='#', data-control='play-pause')
             a.button.button-reset(href='#', data-control='reset') Reset
         .col-md-6.col-map.fullheight
           #centrepiece.fullheight
         .col-md-3.col-right.fullheight
           .about-area.about-text.visible#about-simulation
-            include include/about_simulation
+            include include/about-intro
           .about-area.about-text#about-frequency-meter
-            include include/about_frequency_meter
+            include include/about-synchronization
           .about-area.about-text#about-disturbances
-            include include/about_disturbances
+            include include/about-disturbances
+          .about-area.about-text#about-details
+            include include/about-details
           .controls-util
             a.button.button-info(href='#', data-control='info')
           .controls-about
@@ -58,6 +58,7 @@ block main
             a.button.button-about.selected(href='#', data-about='about-simulation') 1
             a.button.button-about(href='#', data-about='about-frequency-meter') 2
             a.button.button-about(href='#', data-about='about-disturbances') 3
+            a.button.button-about(href='#', data-about='about-details') 4
   .overlay.overlay-info
     .overlay-content
       include include/info
