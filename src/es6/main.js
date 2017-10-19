@@ -64,9 +64,11 @@ $(() => {
   }
 
   function reset() {
-    Simulation.reset();
     sliderPertX.slider('setValue', 0.1, true, true);
     sliderPertY.slider('setValue', 0.1, true, true);
+    sliderSpeed.slider('setValue', 42, true, true);
+    sliderDamp.slider('setValue', 1, true, true);
+    Simulation.reset();
   }
 
   $('[data-control=play-pause]').on('click', (ev) => {
