@@ -66,7 +66,7 @@ $(() => {
   function reset() {
     Simulation.reset();
     sliderPertX.slider('setValue', 0.1, true, true);
-    sliderPertY.slider('setValue', 1, true, true);
+    sliderPertY.slider('setValue', 0.1, true, true);
   }
 
   $('[data-control=play-pause]').on('click', (ev) => {
@@ -90,7 +90,9 @@ $(() => {
   });
 
   sliderPertX.slider('setValue', 0.1, true, true);
-  sliderPertY.slider('setValue', 1, true, true);
+  sliderPertY.slider('setValue', 0.1, true, true);
+  Simulation.setParamPertX(0.1);
+  Simulation.setParamPertY(0.1);
   updateSimControls();
 
   /**
