@@ -56,14 +56,10 @@ $(() => {
       $('body')
         .removeClass('sim-off')
         .addClass('sim-on');
-      sliderSpeed.slider('disable');
-      sliderDamp.slider('disable');
     } else {
       $('body')
         .removeClass('sim-on')
         .addClass('sim-off');
-      sliderSpeed.slider('enable');
-      sliderDamp.slider('enable');
     }
   }
 

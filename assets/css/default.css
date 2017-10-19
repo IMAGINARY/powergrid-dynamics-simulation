@@ -226,20 +226,7 @@ h3 {
   .controls-sim .button {
     margin-right: 5vh; }
   .controls-sim .slider-container {
-    margin-bottom: 4vh; }
-  .controls-sim .sim-param-hint {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    font-size: 1.8vh;
-    line-height: 2vh;
-    position: absolute;
-    bottom: 9vh;
-    color: #a0a0a0;
-    transition: opacity 0.5s;
-    opacity: 0; }
-
-.sim-on .sim-param-hint {
-  opacity: 1; }
+    margin-bottom: 3vh; }
 
 .controls-util {
   position: absolute;

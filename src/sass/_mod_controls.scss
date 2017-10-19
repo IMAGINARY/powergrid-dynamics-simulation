@@ -71,22 +71,8 @@
   }
 
   .slider-container {
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
   }
-
-  .sim-param-hint {
-    @include smallText;
-    line-height: 2vh;
-    position: absolute;
-    bottom: 9vh;
-    color: $color-gray;
-    transition: opacity 0.5s;
-    opacity: 0;
-  }
-}
-
-.sim-on .sim-param-hint {
-  opacity: 1;
 }
 
 .controls-util {
