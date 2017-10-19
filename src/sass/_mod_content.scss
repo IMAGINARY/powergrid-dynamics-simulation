@@ -48,3 +48,30 @@
   height: auto;
   margin: 1vh 0;
 }
+
+.experiment {
+  padding-left: 6vh;
+  margin: 1.5vh 0;
+  strong {
+    color: $color-blue;
+  }
+  .btn {
+    width: 4.6vh;
+    height: 4.6vh;
+    line-height: 4.6vh;
+    font-size: 3vh;
+    float: left;
+    margin-left: -6vh;
+    padding: 0;
+    text-align: center;
+    background-color: $color-blue;
+    color: $color-white;
+    border-radius: 50%;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background-color: darken($color-blue, 10%);
+    }
+  }
+}

@@ -297,7 +297,7 @@ h3 {
 .controls-about {
   position: absolute;
   bottom: 2.5vh;
-  margin-left: -1.2vh; }
+  margin-left: -1vh; }
   .controls-about .controls-about-label {
     color: #666;
     font-family: 'Source Sans Pro', sans-serif;
@@ -422,5 +422,27 @@ h3 {
   width: 100%;
   height: auto;
   margin: 1vh 0; }
+
+.experiment {
+  padding-left: 6vh;
+  margin: 1.5vh 0; }
+  .experiment strong {
+    color: #00749e; }
+  .experiment .btn {
+    width: 4.6vh;
+    height: 4.6vh;
+    line-height: 4.6vh;
+    font-size: 3vh;
+    float: left;
+    margin-left: -6vh;
+    padding: 0;
+    text-align: center;
+    background-color: #00749e;
+    color: #fff;
+    border-radius: 50%; }
+    .experiment .btn:focus {
+      outline: none; }
+    .experiment .btn:active {
+      background-color: #004f6b; }
 
 /*# sourceMappingURL=default.css.map */

@@ -4,10 +4,34 @@ p
   | You can manually perturb the clock position and speed of any node by clicking on it. The size of the perturbation
   | can be selected with the sliders on the left.
 p
-  | Observe how the nodes change their colour/ size and how the links change their width proportional to the
-  | phase/frequency and line loadings. Using such experiments, the CoNDyNet researchers attempt to answer questions
-  | like:
-ul
-  li What is the probability to come back to a stable situation after a local perturbation?
-  li What is the probability that all frequency deviations are strictly limited?
-  li Can we use properties of the network structure to identify the most critical nodes in terms of the above questions?
+  | Alternatively, you can observe predefined perturbations at special nodes
+p.experiment
+  button.btn(onclick='perturb(0, "strong")')
+    i.fa.fa-bolt
+  strong
+    | node in appendices
+  |
+  | Here, it should be comparably easy to desynchronise a small group of nodes from the rest.
+  | A disturbance in an appendix is typically confined there.
+p.experiment
+  button.btn(onclick='perturb(1, "strong")')
+    i.fa.fa-bolt
+  strong
+    | hub (a node with many neighbours)
+  |
+  | The more neighbours a node has, the more likely are large speed deviations after a disturbance.
+p.experiment
+  button.btn(onclick='perturb(2, "strong")')
+    i.fa.fa-bolt
+  strong
+    | detour node (a node parallel to a direct connection)
+  |
+  | Here, it should be difficult to destabilise the power grid.
+p.experiment
+  button.btn(onclick='perturb(3, "strong")')
+    i.fa.fa-bolt
+  strong
+    | dense sprout (an end node connected to node with many neighbours)
+  |
+  | Perturbing a dense sprout can cause an interesting effect: A single node running at its own speed while the
+  | remaining network is in synchronisation. It is an effect predominantly affecting dense sprouts.
