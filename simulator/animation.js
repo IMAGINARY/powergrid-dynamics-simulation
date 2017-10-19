@@ -64,7 +64,8 @@ rainbow = false;
 
 
 function add_cbar() {
-  cbar = {"val": [-Math.PI, -Math.PI/2, -Math.PI/10, 0, Math.PI/10, Math.PI/2, Math.PI], "label": ["-\u03C0", "", "", "0", "", "", "\u03C0"]}
+  cbar = {"val": [-Math.PI, -Math.PI/2, -Math.PI/10, 0, Math.PI/10, Math.PI/2, Math.PI], 
+  "label": ["behind", "", "", "close", "", "", "advance"]} // -\u03C0
 
   w = 20
 
@@ -99,7 +100,7 @@ function add_cbar() {
           .style("text-anchor", "middle")
           .text(function(d) { return d });
 
-  colorbar.append("text").attr("x", 0).attr("y", -10).text("Phase values");
+  colorbar.append("text").attr("x", 0).attr("y", -10).text("relative clock position");
 }
 
 add_cbar()
@@ -258,9 +259,11 @@ var index;
 var x;
 var y;
 
+var circleid = null;
+
 // parameters
-var speed_val = 0,
-	damp_val = 10;
+var base_frequency = 0.;
+var	damp_modifier = 1.;
 
 var pert = {x: 0.1 * Math.PI, y: 1};
 
@@ -268,6 +271,10 @@ var pert = {x: 0.1 * Math.PI, y: 1};
 d3.json("simulator/northern_grid/northern.json", function(e, d) {simulate_graph(d)})
 
 // ###############################################################################################################
+
+function draw_graph(){
+
+}
 
 function simulate_graph(graph_loaded){
 
@@ -330,23 +337,29 @@ function simulate_graph(graph_loaded){
     phase = e.data.phase
 
     avg = d3.mean(frequency)
-
-    fval = speed_val * 10
-    offset = 50 - fval
+    
+    offset = 50. - base_frequency
 
     node
-        .style("fill", function(d) { return color((phase[index[d.id]]/(2 * Math.PI) + 0.5) % 1) })
-        .attr("r", function(d) {return radius + r20 * Math.abs(frequency[index[d.id]] - speed_val * 10) });
-        
-
+        .style("fill", function(d) { return color((phase[index[d.id]] + Math.PI) % ( 2*Math.PI) - Math.PI) })
+        .attr("r", 
+          function(d) {
+            if(d.id == circleid){
+              return 2 * radius + r20 * Math.abs(frequency[index[d.id]] - base_frequency)
+            }
+            else{
+              return radius + r20 * Math.abs(frequency[index[d.id]] - base_frequency)
+            }
+          });
+    
     link
-       .style("stroke-width", function(d) { return 10 * Math.log(1 + Math.abs(Math.sin(phase[index[d.source]] - phase[index[d.target]]))) + "px" });
+       .style("stroke-width", function(d) { return 10 * Math.log(1.05 + Math.abs(Math.sin(phase[index[d.source]] - phase[index[d.target]]))) + "px" });
 
 
     var meterScale = d3.scaleLinear()
                             .clamp(true)
-                            .domain([-20 + fval, -0.2 + fval,  fval, 0.2 + fval, 20 + fval])
-                            .range([0, Math.PI / 6, Math.PI / 2, 5 * Math.PI / 6, 0.95*Math.PI])
+                            .domain([-10. + base_frequency, -0.2 + base_frequency,  base_frequency, 0.2 + base_frequency, 10. + base_frequency])
+                            .range([0, Math.PI / 3, Math.PI / 2, 2 * Math.PI / 3, Math.PI])
                             .nice();
 
     pointer.attr("x2", 50 + 50 * Math.cos( Math.PI + meterScale(avg) )).attr("y2",  50 * (1 - Math.sin( meterScale(avg)) ));
@@ -388,57 +401,64 @@ function simulate_graph(graph_loaded){
 
 
 // ###############################################################################################################
+// Making the inputs do stuff
 
-d3.select("#speed_val").on("input", function() {
-	speed_val = (50 - +this.value) / 10
-	resetNetwork()
+d3.select("#base_frequency").on("input", function() {
+	base_frequency = 50. - +this.value
+	setParameters()
 });
 
-d3.select("#damp_val").on("input", function() {
-	damp_val = +this.value * 10
-	resetNetwork()
+d3.select("#damp_modifier").on("input", function() {
+	damp_modifier = +this.value
+	setParameters()
 });
 
 d3.select("#xpert_val").on("input", function() {
 	pert.x = +this.value * Math.PI
-	data = {
-	    m_type: "parameters",
-	    speed_val: speed_val,
-	    damp_val: damp_val,
-	    pert: pert
-	};
-	// send data
-	simWorker.postMessage(data)
 });
 
 d3.select("#ypert_val").on("input", function() {
 	pert.y = +this.value	
-	data = {
-	    m_type: "parameters",
-	    speed_val: speed_val,
-	    damp_val: damp_val,
-	    pert: pert
-	};
-	// send data
-	simWorker.postMessage(data)
 });
 
+// Utility function to reset the Network
+
 function resetNetwork() {
+  //damp_modifier = 1.
   data = {
     m_type: "network",
     graph: graph,
-    speed_val: speed_val,
-    damp_val: damp_val,
-    pert: pert
+    base_frequency: base_frequency,
+    damp_modifier: damp_modifier,
   };
+  // document.getElementById("damp_modifier").value = damp_modifier
 
   // send data
   simWorker.postMessage(data)
 
 }
 
+
+function setParameters() {
+  data = {
+    m_type: "parameters",
+    base_frequency: base_frequency,
+    damp_modifier: damp_modifier,
+  };
+  // document.getElementById("base_frequency").value = 50. - base_frequency
+  // document.getElementById("damp_modifier").value = damp_modifier
+  // send data
+  simWorker.postMessage(data)
+
+}
+
+
 function clicked(d) {
-  data = {m_type: 'perturbation', perturbation: d.id}
+  data = {m_type: 'perturbation',
+          node_id: d.id, 
+          x: pert.x, 
+          y: pert.y};
+  // console.log(data)
   simWorker.postMessage(data)
 }
 
@@ -448,7 +468,9 @@ function startSim() {
 }
 
 function randomState() {
-  data = {m_type: 'random'}
+  data = {m_type: 'random',
+          x: pert.x, 
+          y: pert.y};
   simWorker.postMessage(data)
 }
 
@@ -456,6 +478,58 @@ function stopSim() {
   data = {m_type: 'sim_off'}
   simWorker.postMessage(data)
 }
+
+
+//special perturbations
+
+var nids = [87, 32, 35, 230]
+
+var perts = {
+  "strong": {
+    x: 0.1 * Math.PI,
+    y: 10
+  },
+  "weak": {
+    x: 0.1 * Math.PI,
+    y: 0.5
+  }
+}
+
+
+function perturb(n, p) {
+  data = {m_type: 'perturbation',
+          node_id: nids[n], 
+          x: perts[p].x, 
+          y: perts[p].y};
+  console.log(data)
+  simWorker.postMessage(data)
+}
+
+
+function over(n) {
+  circleid = nids[n]
+  // Cause a redraw
+  simWorker.postMessage({m_type: 'bounce'})
+}
+
+function out() {
+  circleid = null
+  // Cause a redraw
+  simWorker.postMessage({m_type: 'bounce'})
+}
+
+
+function stableSystem() {
+  damp_modifier = 20.
+  setParameters()
+}
+
+
+function weakSystem() {
+  damp_modifier = 0.2
+  setParameters()
+}
+
 
 function toggleFisheye() {
   if (enable_fisheye) {
@@ -473,10 +547,9 @@ function toggleColor() {
 	if (rainbow) {
 		rainbow = false
 		color = d3.scalePow()
-					.exponent(0.3)
-					.domain([-Math.PI, 0, Math.PI]).clamp(true)
-					.range(["#009fda", "white", "#f25b28"]);
-    add_cbar()
+        .exponent(0.3)
+        .domain([-Math.PI, 0, Math.PI]).clamp(true)
+        .range(["#009fda", "white", "#f25b28"]);
 	}
 	else
 	{

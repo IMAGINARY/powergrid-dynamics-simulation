@@ -1,4 +1,5 @@
-/* global simWorker, startSim, stopSim, resetNetwork, speed_val, damp_val, pert, randomState */
+/* global simWorker, startSim, stopSim, resetNetwork, setParameters, randomState */
+/* global base_frequency, damp_modifier, pert */
 
 /**
  * Interface for encapsulating global/dirty calls to the original simulation code
@@ -30,37 +31,21 @@ export default class Simulation {
   }
 
   static setParamSpeed(value) {
-    speed_val = (50 - +value) / 10; // eslint-disable-line
-    resetNetwork();
+    base_frequency = 50. - +value; // eslint-disable-line
+    setParameters();
   }
 
   static setParamDamp(value) {
-    damp_val = +value * 10; // eslint-disable-line
-    resetNetwork();
+    damp_modifier = +value; // eslint-disable-line
+    setParameters();
   }
 
   static setParamPertX(value) {
     pert.x = +value * Math.PI;
-    const data = {
-      m_type: 'parameters',
-      speed_val,
-      damp_val,
-      pert,
-    };
-    // send data
-    simWorker.postMessage(data);
   }
 
   static setParamPertY(value) {
     pert.y = +value;
-    const data = {
-      m_type: 'parameters',
-      speed_val,
-      damp_val,
-      pert,
-    };
-    // send data
-    simWorker.postMessage(data);
   }
 
   static randomState() {
