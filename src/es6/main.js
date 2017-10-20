@@ -1,6 +1,33 @@
+/* global svg, d3, clicked, x, y */
 import Simulation from './simulation';
 
 $(() => {
+  /**
+   * Create feedback pulse when nodes are clicked
+   */
+
+  function createPulse(x, y) {
+    const pulseDuration = 1000;
+    const pulse = svg.append('circle')
+      .attr('r', 0)
+      .attr('cx', x)
+      .attr('cy', y)
+      .style('pointer-events', 'none')
+      .style('fill', 'rgba(240, 85, 42, 1)'); // #f0552a
+    pulse.transition()
+      .duration(pulseDuration)
+      .ease(d3.easeCubicOut)
+      .attr('r', 100)
+      .style('fill', 'rgba(240, 85, 42, 0)'); // #f0552a
+    window.setTimeout(() => {
+      pulse.interrupt().remove();
+    }, pulseDuration * 1.2);
+  }
+
+  svg.on('nodePerturbed', () => {
+    createPulse(x[d3.event.detail.nid], y[d3.event.detail.nid]);
+  });
+
   /**
    * Setup sliders
    */
@@ -101,7 +128,7 @@ $(() => {
    * "About"/Learn more buttons
    */
   $('.button-about').on('click', (ev) => {
-    if(!$(ev.target).hasClass('selected')) {
+    if (!$(ev.target).hasClass('selected')) {
       $('.button-about').removeClass('selected');
       $(ev.target).addClass('selected');
       $('.about-text').removeClass('visible');

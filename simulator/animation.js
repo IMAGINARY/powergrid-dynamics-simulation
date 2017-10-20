@@ -396,6 +396,7 @@ function simulate_graph(graph_loaded){
 
   }
 
+  svg.dispatch('graphReady');
 }
 
 
@@ -455,11 +456,12 @@ function setParameters() {
 
 function clicked(d) {
   data = {m_type: 'perturbation',
-          node_id: d.id, 
-          x: pert.x, 
+          node_id: d.id,
+          x: pert.x,
           y: pert.y};
-  // console.log(data)
-  simWorker.postMessage(data)
+
+  simWorker.postMessage(data);
+  svg.dispatch('nodePerturbed', {detail: {nid: d.id}});
 }
 
 function startSim() {
@@ -501,8 +503,8 @@ function perturb(n, p) {
           node_id: nids[n], 
           x: perts[p].x, 
           y: perts[p].y};
-  console.log(data)
   simWorker.postMessage(data)
+  svg.dispatch('nodePerturbed', {detail: {nid: nids[n]}});
 }
 
 

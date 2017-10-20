@@ -2,6 +2,7 @@
   display: block;
   margin: -3vh auto 0;
   font-size: 14px; // since svg has rescaling px font sizes work more uniformly than %
+  overflow: visible;
 }
 
 .overlay-info {
